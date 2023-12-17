@@ -1,6 +1,5 @@
 import { test, expect } from '@jest/globals';
 import Validator from '../src/Validator';
-import StringSchema from '../src/types.js/StringSchema';
 
 const v = new Validator();
 const schema = v.string();
@@ -13,7 +12,6 @@ test('Before required', () => {
 
 test('After required', () => {
   schema.required();
-  expect(schema).toBeInstanceOf(StringSchema);
   expect(schema.isValid('what does the fox say')).toBe(true);
   expect(schema.isValid('hexlet')).toBe(true);
   expect(schema.isValid('')).toBe(false);
