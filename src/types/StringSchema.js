@@ -1,12 +1,6 @@
-class StringSchema {
-  constructor() {
-    this.validations = [];
-  }
+import BaseValidator from '../BaseValidation';
 
-  isValid(value) {
-    return this.validations.every((validation) => validation(value));
-  }
-
+class StringSchema extends BaseValidator {
   required() {
     this.validations.push((value) => (!!value));
     return this;

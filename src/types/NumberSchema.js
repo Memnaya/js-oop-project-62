@@ -1,19 +1,13 @@
-class NumberSchema {
-  constructor() {
-    this.validations = [];
-  }
+import BaseValidator from '../BaseValidation';
 
-  isValid(value) {
-    return this.validations.every((validation) => validation(value));
-  }
-
+class NumberSchema extends BaseValidator {
   required() {
     this.validations.push((value) => (typeof (value) === 'number'));
     return this;
   }
 
   positive() {
-    this.validations.push((value) => value > 0);
+    this.validations.push((value) => Number(value) > 0);
     return this;
   }
 

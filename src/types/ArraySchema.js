@@ -1,12 +1,6 @@
-class ArraySchema {
-  constructor() {
-    this.validations = [];
-  }
+import BaseValidator from '../BaseValidation';
 
-  isValid(value) {
-    return this.validations.every((validation) => validation(value));
-  }
-
+class ArraySchema extends BaseValidator {
   required() {
     this.validations.push((value) => Array.isArray(value));
     return this;

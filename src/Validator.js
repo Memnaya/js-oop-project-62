@@ -1,6 +1,7 @@
-import StringSchema from './types.js/StringSchema';
-import NumberSchema from './types.js/NumberSchema';
-import ArraySchema from './types.js/ArraySchema';
+import NumberSchema from './types/NumberSchema';
+import StringSchema from './types/StringSchema';
+import ArraySchema from './types/ArraySchema';
+import ObjectSchema from './types/ObjectSchema';
 
 class Validator {
   string() {
@@ -13,6 +14,10 @@ class Validator {
 
   array() {
     return new ArraySchema();
+  }
+
+  object() {
+    return new ObjectSchema();
   }
 }
 
